@@ -7,15 +7,35 @@ html[data-theme="dark"] {
 .App{
   background-color: var(--background);
 } */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html{
+  --body-background : #fafafa;
+  --body-color : #212121;
+  --header-textcolor : #1C1284;
+  --white : #ffffff;
+  --links-active : #ff0044;
+  --contrast: #222222;
+    --contrast-2: #575760;
+    --contrast-3: #b2b2be;
+    --base: #f0f0f0;
+    --base-2: #f7f8f9;
+    --base-3: #ffffff;
+    --accent: #1e73be;
+}
 body {
   margin: 0;
+  padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #fafafa;
-  color: #212121;
+  background-color: var(--body-background);
+  color: var(--body-color);
   box-sizing: border-box;
 }
 code {
@@ -23,65 +43,86 @@ code {
     monospace;
 }
 .logo_header{
-  padding: 1em 10em;
-  max-width: 1600px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background-color: var(--body-background);
+  color: var(--header-textcolor);
+  max-width: 1200px;
+  margin: 0 auto;
 }
 .logo_header_content{
   display: flex;
   align-items: center;
-  width: 100%;
+  max-width: 1200px;
+  padding: 10px 30px;
+  margin: 0 auto;
+}
+.logo_header_content_info{
+  display: inline-flex;
+  align-items: center;
+  justify-content: left;
 }
 .logo_header_text{
   margin-left: 1em;
 }
+
 .logo_header_text_heading{
-  font-size: 1.8em;
-  color: #1C1284;
+  font-size: 1.5em;
+  font-weight: 500;
+  color: var(--header-textcolor);
 }
 .logo_header_text_desc{
-  color: #1C1284;
+  color: var(--header-textcolor);
 }
 .links_header{
-  padding: 0 10em;
-  max-width: 1600px;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: var(--header-textcolor);
+  /* display: block; */
+}
+.links_header_content{
+  max-width: 1200px; 
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* flex-wrap: wrap;  */
+  background-color: #666666;
+}
+.links_header_content_button{
+  display: none;
+}
+.links_header_content_info{
+}
+.links_header_content_links{
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.links_header_content{
-  display: flex;
-  align-items: center;
-  width: 100%;
-  background-color: #1C1284;
-}
-.links_header_content_links{
-  padding: 0em 4em;
-  display: flex;
-  align-items: center;
-  width: 100%;
-}
 .links_header_content_link{
-  margin: 0 0.8em;
-  padding: 0.7em 0.9em;
+  padding: 0.55em 0.7em 0.6em;
   text-decoration: none;
-  color: #ffffff;
+  line-height: 40px;
+  color: var(--white);
+  font-weight: 400;
 }
 .links_header_content_link.active{
-  background-color: #ff0f4f;
+  background-color: var(--links-active);
 }
 .links_header_content_link:hover{
-  background-color: #ff0f4f;
+  background-color: var(--links-active);
 }
 .blog{
-  padding: 0 10em;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.blog_content{
   display: flex;
 }
 .blog_left{
   width: 70%;
-  margin: 1em 1em 1em 0;
+}
+.blog_left_content{
+  margin: 20px;
+  margin-left: 0;
 }
 .blog_entry{
   background-color: #ffffff;
@@ -95,6 +136,10 @@ code {
   font-size: 1.9em;
   font-weight: 600;
   color: #2f4468;
+  text-decoration: none;
+}
+.blog_entry_heading:hover{
+  color: #212121;
 }
 .blog_entry_date{
   font-size: 14px;
@@ -103,7 +148,7 @@ code {
 }
 .blog_entry_desc{
   color: #212121;
-  margin: 2em 0 2em 0;
+  margin: 2em 0 2.3em 0;
 }
 .blog_entry_more{
   color: #ffffff;
@@ -111,18 +156,25 @@ code {
   padding: 15px 25px;
   text-decoration: none;
 }
+.blog_entry_more:hover{
+  opacity: 0.9;
+}
 .blog_entry_bottomlinks{
-  margin-top: 2em;
-
+  margin-top: 2.5em;
 }
 .blog_entry_bottomlink{
   color: #878787;
   margin: 0 0.5em 0;
   text-decoration: none;
 }
+.blog_entry_bottomlink:hover{
+  color: #212121;
+}
 .blog_right{
   width: 30%;
-  margin:1em 0 ;
+}
+.blog_right_content{
+  margin: 20px 0;
 }
 .blog_search{
   background-color: #83b0de;
@@ -131,12 +183,21 @@ code {
   border-right: 2px solid rgba(0, 0, 0, 0.07);
   border-bottom: 2px solid rgba(0, 0, 0, 0.07);
   box-shadow: 0 0 10px rgba(232, 234, 237, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 .blog_search_heading{
   color: #ffffff;
   font-weight: 600;
   font-size: 1.5em;
   margin-bottom: 1.8em;
+}
+.blog_search_form{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .blog_search_input{
   color: #666666;
@@ -149,6 +210,16 @@ code {
   background-color: #242226;
   padding: 0.8em 1em;
   border: none;
+}
+.blog_search_btn:hover{
+  opacity: 0.9;
+}
+.blog_search_btn_span{
+  color: #ffffff;
+  background-color: #242226;
+}
+.blog_serach_btn_span_svg{
+  fill: currentColor;
 }
 .blog_add{
   background-color: #ffffff;
@@ -168,6 +239,226 @@ code {
   justify-content: center;
   margin-top: 1em;
   color: #1C1284;
+  text-decoration: none;
+}
+.heading{
+  font-size: 28px;
+  font-weight: 500;
+  margin: 1em 6em;
+  padding:0 4em;
+  display: flex;
+  align-items: center;
+}
+.past_papers_content{
+  padding: 50px;
+  background-color: #ffffff;
+  border-right: 2px solid rgba(0, 0, 0, 0.07);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.07);
+  box-shadow: 0 0 10px rgba(232, 234, 237, 0.5);
+}
+.past_papers_heading{
+  font-size: 38px;
+  font-weight: 500;
+  color: #212121;
+  margin-bottom:0.3em ;
+}
+.past_papers_date{
+  color: #878787;
+}
+.past_papers_date_span{
+  color: #878787;
+  text-decoration: none;
+}
+.past_papers_date_span:hover{
+  color: #212121;
+}
+.past_papers_desc{
+  margin: 2.5em 0 2em 0;
+}
+.past_papers_img{
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 2em;
+  background-color: #1C1284;
+}
+.past_papers_img img{
+  background-color: #212121;
+  width: 100%;
+}
+.past_papers_download_subheading{
+  font-size: 30px;
+  font-weight: 500;
+  color: #212121;
+  margin-bottom: 0.8em;
+}
+.past_papers_download_desc{
+  margin-bottom: 1em;
+}
+.past_papers_download_name{
+  text-align: center;
+  font-size: 30px;
+  font-weight: 500;
+  color: #212121;
+  margin-bottom: 0.8em;
+}
+.past_papers_download_name span{
+  background-color: #ffff00;
+}
+table{
+  width: 100%;
+}
+table ,td, th{
+  border: 1px solid #212121;
+  border-collapse: collapse;
+  margin-bottom: 1em;
+  border-spacing: 1px 0 0 1px;
+  /* border-bottom: 3px solid #212121; */
+}
+thead{
+  border-bottom: 3px solid #212121;
+  
+}
+th{
+  border: 1px solid #212121;
+  padding: 0.5em;
+  text-align: left;
+}
+.table_header{
+  background-color: #ffff00;
+}
+td{
+  padding: 0.5em;
+  font-weight: 500;
+  width: 50%;
+}
+.table_link_container{
+  width: 20%;
+}
+.table_link{
+  text-decoration: none;
+  color: #1b78e2;
+  font-weight: 500;
+}
+.table_link:hover{
+  color: #212121;
+}
+.past_papers_download_link{
+  /* background-color: lightblue; */
+  border: 1px solid #dcdcde;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  margin-right: 8em;
+}
+.past_papers_download_link_img{
+  width: 100%;
+}
+.past_papers_download_link_img img{
+  width: 100%;
+}
+.past_papers_download_link_heading{
+  font-size: 1.5em;
+  font-weight: 600;
+  margin: 1.4em 0 1em;
+  color: #2c3338;
+  text-decoration: none;
+}
+.past_papers_download_link_heading:hover{
+  text-decoration: underline;
+}
+.past_papers_download_link_desc{
+  color:#8c8f94 ;
+}
+.past_papers_download_link_desc_link{
+  color: #c3c4c7;
+  text-decoration: none;
+}
+.past_papers_download_link_desc_link:hover{
+  text-decoration: underline;
+}
+.past_papers_download_link_footer{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.5em;
+}
+.past_papers_download_link_home{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #8c8f94;
+}
+.past_papers_download_link_home:hover{
+  text-decoration: underline;
+}
+.past_papers_download_link_home img{
+  width: 22px;
+  margin-right: 0.5em;
+}
+.past_papers_download_link_share{
+  color: #8c8f94;
+  font-size: 20px;
+  font-weight: 1000;
+}
+.past_papers_download_link_share:hover{
+  color: #1b78e2;
+}
+.past_papers_share{
+  margin: 1.5em 0;
+}
+.past_papers_share_heading{
+  font-size: 20px;
+  color: #212121;
+  margin-bottom: 1em;
+}
+.past_papers_share_links{
+  display: flex;
+}
+.past_papers_related_posts_links_link{
+  
+}
+.dropdown{
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  padding: 0 0.6em;
+}
+.dropdown_content{
+  display: none;
+  position: absolute;
+  width: 200px;
+  z-index: 99999;
+  top: 2.5em;
+  right: 0em;
+  background-color: #ff0f4f;
+}
+.dropdown:hover .dropdown_content{
+  display: block;
+}
+.links_header_content_dropdown_link{
+  display: block;
+  text-align: left;
+  padding: 0.2em 0.6em;
+  text-decoration: none;
+  color: #ffffff;
+}
+.links_header_content_dropdown_link:hover{
+  background-color: #1C1284;
+}
+.links_header_content_dropdown_link.active{
+  background-color: #1C1284;
+}
+.links_header_content_link_dropdown_container{
+  display: flex;
+  align-items: center;
+}
+.links_header_content_link_dropdown_span{
+ display: inline-flex;
+ align-items: center;
+ justify-content: center;
+ margin-left: 5px;
+ fill: #ffffff;
 }
 .footer{
   background-color: #1b1383;
@@ -184,7 +475,7 @@ code {
   justify-content: center;
   width: 100%;
 }
-@media (max-width:1400px){
+/* @media (max-width:1400px){
   .logo_header{
     padding: 1em 8em;
   }
@@ -212,7 +503,7 @@ code {
   .links_header_content_links{
     padding: 0 2em;
   }
-}
+}*/
 .contact{
   padding: 0 8em;
   display: flex;
